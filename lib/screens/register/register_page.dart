@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_app/screens/components/inputs.dart';
 import 'package:login_app/screens/components/plattaforms.dart';
@@ -65,7 +68,9 @@ class RegisterPage extends StatelessWidget {
                       isPassword: false,
                       controller: emailCtrl,
                       hintTxt: "Email ID",
-                      icon: const Icon(Icons.email),
+                      icon: Platform.isIOS
+                          ? const Icon(CupertinoIcons.bubble_left_fill)
+                          : const Icon(Icons.email),
                     ),
                   ),
                   Padding(
@@ -74,7 +79,9 @@ class RegisterPage extends StatelessWidget {
                       isPassword: true,
                       controller: passwordCtrl,
                       hintTxt: "Password",
-                      icon: const Icon(Icons.password),
+                      icon: Platform.isIOS
+                          ? const Icon(CupertinoIcons.lock_fill)
+                          : const Icon(Icons.password),
                     ),
                   ),
                   Padding(
@@ -83,7 +90,9 @@ class RegisterPage extends StatelessWidget {
                       isPassword: false,
                       controller: fullNameCtrl,
                       hintTxt: "Full name",
-                      icon: const Icon(Icons.wysiwyg_rounded),
+                      icon: Platform.isIOS
+                          ? const Icon(CupertinoIcons.profile_circled)
+                          : const Icon(Icons.wysiwyg_rounded),
                     ),
                   ),
                   Padding(
@@ -92,7 +101,9 @@ class RegisterPage extends StatelessWidget {
                       isPassword: false,
                       controller: companyCtrl,
                       hintTxt: "Company name",
-                      icon: const Icon(Icons.work),
+                      icon: Platform.isIOS
+                          ? const Icon(CupertinoIcons.bag_fill)
+                          : const Icon(Icons.work),
                     ),
                   ),
                 ],

@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_app/screens/components/inputs.dart';
 import 'package:login_app/screens/components/login_button.dart';
@@ -53,7 +55,9 @@ class LoginPage extends StatelessWidget {
                       isPassword: false,
                       controller: _emailController,
                       hintTxt: "Email ID",
-                      icon: const Icon(Icons.email),
+                      icon: Platform.isIOS
+                          ? const Icon(CupertinoIcons.bubble_left_fill)
+                          : const Icon(Icons.email),
                     ),
                   ),
                   Padding(
@@ -62,7 +66,9 @@ class LoginPage extends StatelessWidget {
                       isPassword: true,
                       controller: _passwordController,
                       hintTxt: "Password",
-                      icon: const Icon(Icons.password),
+                      icon: Platform.isIOS
+                          ? const Icon(CupertinoIcons.padlock_solid)
+                          : const Icon(Icons.password),
                     ),
                   ),
                   LoginButton(onPressed: () {}),
