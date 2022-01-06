@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:login_app/screens/login/login_page.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // is not restarted.
+        textTheme: GoogleFonts.dmSansTextTheme(),
         primarySwatch: Colors.blue,
       ),
       home: LoginPage(),
